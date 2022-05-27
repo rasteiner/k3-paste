@@ -19,7 +19,9 @@ esbuild.build({
   watch: dev,
   target: 'esnext',
   sourcemap: false,
-  plugins: [vuePlugin()],
+  plugins: [vuePlugin({
+    extractCss: true,
+  })],
   define: {
     "process.env.NODE_ENV": JSON.stringify(dev ? "development" : "production"),
   },
